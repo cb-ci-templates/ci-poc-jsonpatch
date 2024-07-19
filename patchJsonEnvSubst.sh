@@ -32,8 +32,5 @@ jq --argjson patch "$(cat "$GEN_DIR/gen-patch.json")" '
     )
 ' <<< "$ORIGINAL_JSON_CONTENT" > "$PATCHED_ORIGINAL"
 
-# Save patched JSON to file
-#echo "$patched" >> "$patched_json"
-
 # Print the patched JSON
 cat "$PATCHED_ORIGINAL"

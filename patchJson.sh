@@ -21,23 +21,9 @@ jq --argjson patch "$(cat "$PATCH_JSON")" '
     )
 ' <<< "$ORIGINAL_JSON_CONTENT" > "$PATCHED_ORIGINAL"
 
-# Save patched JSON to file
-#echo "$patched" >> "$PATCHED_ORIGINAL"
-
 # Print the patched JSON
 cat "$PATCHED_ORIGINAL"
 
-#patched=$(jq --argjson patch "$(cat "$PATCH_JSON")" '. as $ORIGINAL_JSON_CONTENT | reduce $patch[] as $p ({}; .[$p.path | ltrimstr("/")] = $p.value)' <<< "$ORIGINAL_JSON_CONTENT")
-#patched=$(jq --argjson patch "$(cat "$PATCH_JSON")" '. as $ORIGINAL_JSON_CONTENT | reduce $patch[] as $p ({}; .[$p.path | ltrimstr("/")] = $p.value) | . ' <<< "$ORIGINAL_JSON_CONTENT")
-#patched=$(jq --argjson patch "$(cat "$PATCH_JSON")" '. as $ORIGINAL_JSON_CONTENT | reduce $patch[] as $p ({}; .[$p.path | ltrimstr("/")] = $p.value)' <<< "$ORIGINAL_JSON_CONTENT")
-
-#jq --argjson patch "$(cat "$PATCH_JSON")" '
-#    . as $ORIGINAL_JSON_CONTENT |
-#    reduce $patch[] as $p (
-#        $ORIGINAL_JSON_CONTENT;
-#        .[$p.path | ltrimstr("/")] = $p.value
-#    )
-#' <<< "$ORIGINAL_JSON_CONTENT" > "$PATCHED_ORIGINAL"
 
 
 

@@ -4,6 +4,7 @@ set -x
 
 
 YAML_FILE=ci-config-defaults.yaml
+JSON_FILE=ci-config-defaults.json
 PATCH_JSON=patches/patch.json
 # Check if yq and jq are installed
 if ! command -v yq &> /dev/null; then
@@ -22,4 +23,4 @@ yq  '.build.maven.image = "maven:3-amazoncorretto-test-simple"' $YAML_FILE
 #yq -i '.build.maven.image = "maven:3-amazoncorretto-17"' $YAML_FILE
 
 #Use jq
-#jq '.build.maven.image = "maven:3-amazoncorretto-17"' $YAML_FILE
+jq '.build.maven.image = "maven:3-amazoncorretto-17"' $JSON_FILE
