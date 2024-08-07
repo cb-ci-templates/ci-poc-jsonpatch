@@ -44,8 +44,10 @@ jq --argjson patch "$(cat "$PATCH_JSON")" '
 # Convert JSON back to YAML
 yq -P -o=yaml . $PATCHED_ORIGINAL_JSON > $PATCHED_ORIGINAL_YAML
 
-echo "Output the patched JSON content"
-cat $PATCHED_ORIGINAL_JSON
+#echo "Output the patched JSON content"
+#cat $PATCHED_ORIGINAL_JSON
 
 echo "Output the patched YAML content"
 cat $PATCHED_ORIGINAL_YAML
+
+diff -u $PATCHED_ORIGINAL_YAML $ORIGINAL_YAML
