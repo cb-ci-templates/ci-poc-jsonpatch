@@ -22,7 +22,7 @@ rm -Rf $GEN_DIR/*
 ORIGINAL_YAML="ci-config-defaults.yaml"
 ORIGINAL_JSON="$GEN_DIR/ci-config-defaults.json"
 PATCH_JSON="patches/patch.json"
-PATCHED_ORIGINAL_JSON="$GEN_DIR/ci-config-defaults.json"
+PATCHED_ORIGINAL_JSON="$GEN_DIR/ci-config-defaults-patched.json"
 PATCHED_ORIGINAL_YAML="$GEN_DIR/$ORIGINAL_YAML"
 
 #Use Jsonpatch
